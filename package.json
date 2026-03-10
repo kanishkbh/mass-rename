@@ -6,7 +6,7 @@
   "publisher": "kanishkbh",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kanishkbh/batch-rename"
+    "url": "https://github.com/kanishkbh/multi-rename"
   },
   "engines": {
     "vscode": "^1.89.1"
@@ -19,7 +19,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.renameBatch",
+        "command": "extension.multiRename",
         "title": "Multi Rename...",
         "category": "Multi Rename"
       }
@@ -27,7 +27,7 @@
     "menus": {
       "explorer/context": [
         {
-          "command": "extension.renameBatch",
+          "command": "extension.multiRename",
           "group": "7_modification"
         }
       ]
