@@ -19,7 +19,7 @@ interface Renaming {
 export function activate(context: vscode.ExtensionContext) {
     let current_renaming: Renaming | undefined;
 
-    const disposableRenameCommand = vscode.commands.registerCommand('extension.multiRename', (_clicked_file, selected_files: vscode.Uri[]) => {
+    const disposableRenameCommand = vscode.commands.registerCommand('extension.massRename', (_clicked_file, selected_files: vscode.Uri[]) => {
         if (!selected_files) return;
 
         current_renaming = { files: [] };
@@ -30,7 +30,7 @@ export function activate(context: vscode.ExtensionContext) {
             current_renaming!.files.push({ fsPath: file.fsPath, basename, basepath });
         });
 
-        const batchFilePath = path.join(os.tmpdir(), '.multi-rename.txt');
+        const batchFilePath = path.join(os.tmpdir(), '.mass-rename.txt');
         const content = current_renaming.files.map(file => file.basename).join('\n');
         fs.writeFileSync(batchFilePath, content);
 
